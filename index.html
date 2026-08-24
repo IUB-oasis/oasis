@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oasis | The Best Chinese Fast Food</title>
+<style>
+  :root {
+    --primary: #c0392b;
+    --primary-dark: #a93226;
+    --accent: #f39c12;
+    --dark: #2c3e50;
+    --light: #fdf6ec;
+    --text: #444;
+    --muted: #777;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    color: var(--text);
+    background: var(--light);
+    line-height: 1.6;
+  }
+  img { max-width: 100%; display: block; }
+
+  /* Header */
+  header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: #fff;
+    text-align: center;
+    padding: 64px 20px 56px;
+  }
+  header .logo {
+    font-size: 60px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-shadow: 0 4px 12px rgba(0,0,0,.25);
+  }
+  header .tagline {
+    margin-top: 14px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    opacity: .95;
+  }
+  header .badge {
+    display: inline-block;
+    margin-top: 22px;
+    background: var(--accent);
+    color: #fff;
+    padding: 8px 22px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,.2);
+  }
+
+  /* Nav */
+  nav {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  nav a {
+    display: block;
+    padding: 14px 24px;
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+    transition: color .2s;
+  }
+  nav a:hover { color: var(--primary); }
+
+  /* Sections */
+  section { max-width: 960px; margin: 0 auto; padding: 56px 24px; }
+  h2 {
+    text-align: center;
+    font-size: 30px;
+    color: var(--dark);
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+  }
+  .section-sub {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 36px;
+  }
+  .divider {
+    width: 56px; height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
+    margin: 0 auto 40px;
+  }
+
+  /* Signature dish */
+  .signature {
+    display: flex;
+    gap: 36px;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 6px 24px rgba(0,0,0,.08);
+  }
+  .signature img {
+    width: 320px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  .signature .info { flex: 1; min-width: 260px; }
+  .signature h3 { font-size: 26px; color: var(--primary); margin-bottom: 6px; }
+  .signature .sub { color: var(--accent); font-weight: 700; margin-bottom: 12px; }
+  .signature p { color: var(--text); }
+  .signature .price {
+    display: inline-block;
+    margin-top: 16px;
+    background: var(--primary);
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-weight: 700;
+  }
+
+  /* Menu */
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .menu-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.06);
+    transition: transform .2s, box-shadow .2s;
+    position: relative;
+  }
+  .menu-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.1); }
+  .menu-card .flag {
+    position: absolute;
+    top: 14px; right: 14px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+  .menu-card h4 { font-size: 18px; color: var(--dark); margin-bottom: 4px; }
+  .menu-card .desc { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
+  .menu-card .meta { display: flex; justify-content: space-between; align-items: center; }
+  .menu-card .price { color: var(--primary); font-weight: 700; font-size: 18px; }
+  .stars { color: var(--accent); font-size: 14px; letter-spacing: 1px; }
+
+  /* Info */
+  .info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  .info-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 26px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,.06);
+  }
+  .info-card .icon { font-size: 34px; margin-bottom: 10px; }
+  .info-card h4 { color: var(--dark); margin-bottom: 8px; font-size: 17px; }
+  .info-card p { color: var(--muted); font-size: 15px; }
+  .hours { list-style: none; text-align: center; }
+  .hours li { padding: 4px 0; font-size: 15px; color: var(--text); }
+  .hours li span { color: var(--muted); }
+  .hours .closed { color: var(--primary); font-weight: 600; }
+
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,.85);
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 14px;
+  }
+  footer .brand { font-weight: 700; color: #fff; letter-spacing: 2px; }
+  footer .slogan { color: var(--accent); margin-top: 4px; font-size: 15px; }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    header { padding: 48px 16px 40px; }
+    header .logo { font-size: 44px; }
+    nav a { padding: 12px 14px; font-size: 14px; }
+    section { padding: 40px 16px; }
+    h2 { font-size: 24px; }
+    .signature { padding: 22px; }
+    .signature img { width: 100%; height: 200px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">OASIS</div>
+  <div class="tagline">The Best Chinese Fast Food</div>
+  <div class="badge">Est. Bloomington, IN</div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#signature">招牌美食</a></li>
+    <li><a href="#menu">菜单</a></li>
+    <li><a href="#info">地址与营业时间</a></li>
+  </ul>
+</nav>
+
+<section id="signature">
+  <h2>招牌美食</h2>
+  <div class="section-sub">Signature Dish</div>
+  <div class="divider"></div>
+  <div class="signature">
+    <img src="https://placehold.co/640x480/c0392b/ffffff?text=Handmade+Wontons" alt="手工馄饨 Handmade Wontons">
+    <div class="info">
+      <h3>手工馄饨 Handmade Wontons</h3>
+      <div class="sub">本店招牌 · Chef's Special</div>
+      <p>每一只馄饨均为当天手工现包，薄韧面皮包裹鲜美猪肉馅，配以秘制高汤与紫菜虾皮，一口鲜香，暖心暖胃。这是 Oasis 最受欢迎的招牌，来店必点。</p>
+      <div class="price">$8.99</div>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <h2>菜单</h2>
+  <div class="section-sub">Menu</div>
+  <div class="divider"></div>
+  <div class="menu-grid">
+
+    <div class="menu-card">
+      <span class="flag">招牌</span>
+      <h4>手工馄饨 Handmade Wontons</h4>
+      <div class="desc">手工现包馄饨 · 秘制高汤</div>
+      <div class="meta">
+        <span class="price">$8.99</span>
+        <span class="stars">★★★★★</span>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <h4>蛋炒饭 Egg Fried Rice</h4>
+      <div class="desc">米饭粒粒分明 · 鸡蛋葱花</div>
+      <div class="meta">
+        <span class="price">$7.99</span>
+        <span class="stars">★★★★☆</span>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <h4>宫保鸡丁 Kung Pao Chicken</h4>
+      <div class="desc">鸡肉花生 · 微辣带香</div>
+      <div class="meta">
+        <span class="price">$10.99</span>
+        <span class="stars">★★★★★</span>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <h4>捞面 Lo Mein</h4>
+      <div class="desc">劲道面条 · 时蔬炒制</div>
+      <div class="meta">
+        <span class="price">$9.99</span>
+        <span class="stars">★★★★☆</span>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <h4>左宗棠鸡 General Tso's Chicken</h4>
+      <div class="desc">外酥里嫩 · 甜辣酱汁</div>
+      <div class="meta">
+        <span class="price">$11.99</span>
+        <span class="stars">★★★★★</span>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <h4>春卷 Spring Rolls</h4>
+      <div class="desc">金黄酥脆 · 蔬菜馅料</div>
+      <div class="meta">
+        <span class="price">$4.99</span>
+        <span class="stars">★★★★☆</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="info">
+  <h2>地址与营业时间</h2>
+  <div class="section-sub">Location & Hours</div>
+  <div class="divider"></div>
+  <div class="info-cards">
+    <div class="info-card">
+      <div class="icon">📍</div>
+      <h4>地址 Address</h4>
+      <p>2652 E 10th St<br>Bloomington, IN 47408<br>USA</p>
+    </div>
+    <div class="info-card">
+      <div class="icon">🕐</div>
+      <h4>营业时间 Hours</h4>
+      <ul class="hours">
+        <li>周一至周五 <span>10:30 AM – 9:00 PM</span></li>
+        <li>周六 <span>11:00 AM – 9:00 PM</span></li>
+        <li class="closed">周日 休息 Closed</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <div class="icon">☎️</div>
+      <h4>联系电话 Phone</h4>
+      <p>(812) 000-0000<br>支持到店自取</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">OASIS</div>
+  <div class="slogan">The Best Chinese Fast Food</div>
+  <div style="margin-top:10px;">2652 E 10th St, Bloomington, IN 47408, USA</div>
+</footer>
+
+<script>
+  // 轻微交互：点击导航时平滑滚动（CSS 已处理）；这里用于年份与简单问候
+  document.addEventListener('DOMContentLoaded', function () {
+    var year = new Date().getFullYear();
+    var el = document.querySelector('footer .brand');
+    if (el) el.textContent = 'OASIS © ' + year;
+  });
+</script>
+
+</body>
+</html>
