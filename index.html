@@ -165,6 +165,62 @@
   .menu-card .price { color: var(--primary); font-weight: 700; font-size: 18px; }
   .stars { color: var(--accent); font-size: 14px; letter-spacing: 1px; }
 
+  /* Full menu image */
+  .menu-image-wrap {
+    margin-top: 44px;
+    text-align: center;
+  }
+  .menu-image-wrap .menu-image {
+    display: inline-block;
+    cursor: zoom-in;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0,0,0,.12);
+    transition: transform .2s;
+  }
+  .menu-image-wrap .menu-image:hover { transform: scale(1.02); }
+  .menu-image-wrap .menu-image img {
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    display: block;
+  }
+  .menu-image-wrap .hint {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(0,0,0,.85);
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img {
+    max-width: 95%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,.5);
+  }
+  .lightbox .close-btn {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    color: #fff;
+    font-size: 40px;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+  }
+
   /* Info */
   .info-cards {
     display: grid;
@@ -406,7 +462,22 @@
     </div>
 
   </div>
+
+  <div class="menu-image-wrap">
+    <h3 style="text-align:center; color:var(--dark); margin:0 0 4px;">完整菜单 Full Menu</h3>
+    <div class="divider"></div>
+    <div class="menu-image" id="menuImage">
+      <img src="images/menu.jpg" alt="Oasis 完整菜单 Full Menu">
+    </div>
+    <p class="hint">点击图片查看完整菜单</p>
+  </div>
 </section>
+
+<!-- 点击放大预览遮罩 -->
+<div class="lightbox" id="menuLightbox">
+  <span class="close-btn" id="menuLightboxClose">&times;</span>
+  <img src="images/menu.jpg" alt="Oasis 完整菜单放大预览">
+</div>
 
 <section id="info">
   <h2>地址与营业时间</h2>
@@ -447,6 +518,26 @@
     var year = new Date().getFullYear();
     var el = document.querySelector('footer .brand');
     if (el) el.textContent = 'OASIS © ' + year;
+
+    // 菜单图片点击放大预览
+    var menuImage = document.getElementById('menuImage');
+    var lightbox = document.getElementById('menuLightbox');
+    var closeBtn = document.getElementById('menuLightboxClose');
+    if (menuImage && lightbox && closeBtn) {
+      menuImage.addEventListener('click', function () {
+        lightbox.classList.add('open');
+      });
+      function closeLightbox() {
+        lightbox.classList.remove('open');
+      }
+      closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    }
   });
 </script>
 
