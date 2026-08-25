@@ -165,60 +165,14 @@
   .menu-card .price { color: var(--primary); font-weight: 700; font-size: 18px; }
   .stars { color: var(--accent); font-size: 14px; letter-spacing: 1px; }
 
-  /* Full menu image */
-  .menu-image-wrap {
-    margin-top: 44px;
-    text-align: center;
-  }
-  .menu-image-wrap .menu-image {
-    display: inline-block;
-    cursor: zoom-in;
-    max-width: 100%;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 6px 24px rgba(0,0,0,.12);
-    transition: transform .2s;
-  }
-  .menu-image-wrap .menu-image:hover { transform: scale(1.02); }
-  .menu-image-wrap .menu-image img {
+  /* Dish photos in menu cards */
+  .menu-card img.dish-photo {
     width: 100%;
-    max-width: 560px;
-    height: auto;
-    display: block;
-  }
-  .menu-image-wrap .hint {
-    margin-top: 12px;
-    color: var(--muted);
-    font-size: 14px;
-  }
-
-  /* Lightbox */
-  .lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 200;
-    background: rgba(0,0,0,.85);
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-  }
-  .lightbox.open { display: flex; }
-  .lightbox img {
-    max-width: 95%;
-    max-height: 90vh;
+    height: 150px;
+    object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0,0,0,.5);
-  }
-  .lightbox .close-btn {
-    position: absolute;
-    top: 16px;
-    right: 24px;
-    color: #fff;
-    font-size: 40px;
-    line-height: 1;
-    cursor: pointer;
-    user-select: none;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
   }
 
   /* Info */
@@ -285,7 +239,7 @@
   <div class="section-sub">Signature Dish</div>
   <div class="divider"></div>
   <div class="signature">
-    <img src="https://placehold.co/640x480/c0392b/ffffff?text=Handmade+Wontons" alt="手工馄饨 Handmade Wontons">
+    <img src="images/dishes/wonton-soup.jpg" alt="手工鸡汤猪肉大馄饨 Handmade Pork Wontons">
     <div class="info">
       <h3>手工鸡汤猪肉大馄饨 Handmade Pork Wontons</h3>
       <div class="sub">本店招牌 · 强烈推荐</div>
@@ -303,6 +257,7 @@
 
     <div class="menu-card">
       <span class="flag">招牌</span>
+      <img class="dish-photo" src="images/dishes/wonton-soup.jpg" alt="手工鸡汤猪肉大馄饨">
       <h4>手工鸡汤猪肉大馄饨（白汤/红油）15个</h4>
       <div class="desc">强烈推荐 · 手工现包 · 15个/份</div>
       <div class="meta">
@@ -312,6 +267,7 @@
     </div>
 
     <div class="menu-card">
+      <img class="dish-photo" src="images/dishes/wonton-spicy.jpg" alt="手工干挑猪肉大馄饨">
       <h4>手工干挑猪肉大馄饨（酸辣）15个</h4>
       <div class="desc">强烈推荐 · 酸辣口味 · 15个/份</div>
       <div class="meta">
@@ -321,6 +277,7 @@
     </div>
 
     <div class="menu-card">
+      <img class="dish-photo" src="images/dishes/wonton-noodle.jpg" alt="馄饨面">
       <h4>馄饨面</h4>
       <div class="desc">7个馄饨 + 捞面</div>
       <div class="meta">
@@ -330,6 +287,7 @@
     </div>
 
     <div class="menu-card">
+      <img class="dish-photo" src="images/dishes/beef-noodle.jpg" alt="秘制红烧牛腩面">
       <h4>秘制红烧牛腩面</h4>
       <div class="desc">强烈推荐 · 秘制红烧牛腩</div>
       <div class="meta">
@@ -339,6 +297,7 @@
     </div>
 
     <div class="menu-card">
+      <img class="dish-photo" src="images/dishes/braised-pork-rice.jpg" alt="卤肉饭">
       <h4>卤肉饭（含卤蛋）</h4>
       <div class="desc">强烈推荐 · 含卤蛋</div>
       <div class="meta">
@@ -348,6 +307,7 @@
     </div>
 
     <div class="menu-card">
+      <img class="dish-photo" src="images/dishes/ribs-rice.jpg" alt="红烧排骨饭">
       <h4>红烧排骨饭（含卤蛋）</h4>
       <div class="desc">强烈推荐 · 含卤蛋</div>
       <div class="meta">
@@ -357,6 +317,7 @@
     </div>
 
     <div class="menu-card">
+      <img class="dish-photo" src="images/dishes/curry-chicken-rice.jpg" alt="咖喱鸡饭">
       <h4>咖喱鸡饭（含卤蛋）</h4>
       <div class="desc">强烈推荐 · 含卤蛋</div>
       <div class="meta">
@@ -366,6 +327,7 @@
     </div>
 
     <div class="menu-card">
+      <img class="dish-photo" src="images/dishes/fried-egg-noodle.jpg" alt="飘香拌面">
       <h4>飘香拌面（含煎蛋）</h4>
       <div class="desc">含煎蛋 · 可选辣/不辣</div>
       <div class="meta">
@@ -375,6 +337,7 @@
     </div>
 
     <div class="menu-card">
+      <img class="dish-photo" src="images/dishes/hot-sour-rice-noodles.jpg" alt="酸辣粉">
       <h4>酸辣粉（含卤蛋）</h4>
       <div class="desc">荐 · 酸辣开胃 · 含卤蛋</div>
       <div class="meta">
@@ -384,6 +347,7 @@
     </div>
 
     <div class="menu-card">
+      <img class="dish-photo" src="images/dishes/spicy-meatballs.jpg" alt="麻辣什锦丸子">
       <h4>麻辣什锦丸子</h4>
       <div class="desc">荐 · 8个/份</div>
       <div class="meta">
@@ -393,6 +357,7 @@
     </div>
 
     <div class="menu-card">
+      <img class="dish-photo" src="images/dishes/marinated-chicken-wings.jpg" alt="老卤鸡翅">
       <h4>老卤鸡翅</h4>
       <div class="desc">荐 · 4个/份</div>
       <div class="meta">
@@ -402,6 +367,7 @@
     </div>
 
     <div class="menu-card">
+      <img class="dish-photo" src="images/dishes/marinated-chicken-leg.jpg" alt="老卤鸡腿">
       <h4>老卤鸡腿</h4>
       <div class="desc">荐 · 2个/份</div>
       <div class="meta">
@@ -411,6 +377,7 @@
     </div>
 
     <div class="menu-card">
+      <img class="dish-photo" src="images/dishes/fried-egg.svg" alt="荷包蛋">
       <h4>荷包蛋</h4>
       <div class="desc">Add-On · 1个/份</div>
       <div class="meta">
@@ -462,26 +429,11 @@
     </div>
 
   </div>
-
-  <div class="menu-image-wrap">
-    <h3 style="text-align:center; color:var(--dark); margin:0 0 4px;">完整菜单 Full Menu</h3>
-    <div class="divider"></div>
-    <div class="menu-image" id="menuImage">
-      <img src="images/menu.jpg" alt="Oasis 完整菜单 Full Menu">
-    </div>
-    <p class="hint">点击图片查看完整菜单</p>
-  </div>
 </section>
-
-<!-- 点击放大预览遮罩 -->
-<div class="lightbox" id="menuLightbox">
-  <span class="close-btn" id="menuLightboxClose">&times;</span>
-  <img src="images/menu.jpg" alt="Oasis 完整菜单放大预览">
-</div>
 
 <section id="info">
   <h2>地址与营业时间</h2>
-  <div class="section-sub">Location &amp; Hours</div>
+  <div class="section-sub">Location & Hours</div>
   <div class="divider"></div>
   <div class="info-cards">
     <div class="info-card">
@@ -518,26 +470,6 @@
     var year = new Date().getFullYear();
     var el = document.querySelector('footer .brand');
     if (el) el.textContent = 'OASIS © ' + year;
-
-    // 菜单图片点击放大预览
-    var menuImage = document.getElementById('menuImage');
-    var lightbox = document.getElementById('menuLightbox');
-    var closeBtn = document.getElementById('menuLightboxClose');
-    if (menuImage && lightbox && closeBtn) {
-      menuImage.addEventListener('click', function () {
-        lightbox.classList.add('open');
-      });
-      function closeLightbox() {
-        lightbox.classList.remove('open');
-      }
-      closeBtn.addEventListener('click', closeLightbox);
-      lightbox.addEventListener('click', function (e) {
-        if (e.target === lightbox) closeLightbox();
-      });
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closeLightbox();
-      });
-    }
   });
 </script>
 
