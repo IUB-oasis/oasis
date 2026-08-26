@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -214,6 +214,22 @@
   footer .brand { font-weight: 700; color: #fff; letter-spacing: 2px; }
   footer .slogan { color: var(--accent); margin-top: 4px; font-size: 15px; }
 
+  /* Hero text */
+  .hero-text {
+    margin-top: 16px;
+    text-align: center;
+  }
+  .hero-text h1 {
+    font-size: 26px;
+    color: var(--dark);
+    letter-spacing: 1px;
+  }
+  .hero-text p {
+    color: var(--muted);
+    margin-top: 6px;
+    font-size: 15px;
+  }
+
   /* Responsive */
   @media (max-width: 640px) {
     header { padding: 48px 16px 40px; }
@@ -229,49 +245,53 @@
 <body>
 
 <header>
-  <img class="brand-logo" src="images/logo.png" alt="Oasis 徽标">
+  <img class="brand-logo" src="images/logo.png" alt="Oasis Logo 徽标">
   <div class="tagline">The Best Chinese Fast Food</div>
   <div class="badge">Est. Bloomington, IN</div>
 </header>
 
 <nav>
   <ul>
-    <li><a href="#signature">招牌美食</a></li>
-    <li><a href="#menu">菜单</a></li>
-    <li><a href="#info">地址与营业时间</a></li>
+    <li><a href="#signature">Signature 招牌</a></li>
+    <li><a href="#menu">Menu 菜单</a></li>
+    <li><a href="#info">Location &amp; Hours 地址与营业时间</a></li>
   </ul>
 </nav>
 
 <section class="hero">
   <img src="images/poster.png" alt="Oasis 海报">
+  <div class="hero-text">
+    <h1>Authentic Chinese Fast Food, Made Fresh Daily</h1>
+    <p>地道中式快餐 · 每日新鲜现做</p>
+  </div>
 </section>
 
 <section id="signature">
-  <h2>招牌美食</h2>
-  <div class="section-sub">Signature Dish</div>
+  <h2>Signature Dish</h2>
+  <div class="section-sub">招牌美食</div>
   <div class="divider"></div>
   <div class="signature">
     <img src="images/dishes/手工鸡汤猪肉大馄饨.png" alt="手工鸡汤猪肉大馄饨 Handmade Pork Wontons">
     <div class="info">
-      <h3>手工鸡汤猪肉大馄饨 Handmade Pork Wontons</h3>
-      <div class="sub">本店招牌 · 强烈推荐</div>
-      <p>每一只馄饨均为当天手工现包，薄韧面皮包裹鲜美猪肉馅，配以白汤或红油汤底，一碗 15 个，鲜香暖胃。这是 Oasis 最受欢迎的招牌，来店必点。</p>
+      <h3>Handmade Pork &amp; Chicken Wontons in Soup 手工鸡汤猪肉大馄饨</h3>
+      <div class="sub">House Signature · Highly Recommended 本店招牌 · 强烈推荐</div>
+      <p>Freshly hand-wrapped wontons every day — thin, chewy wrappers filled with savory pork, served in clear chicken broth or spicy red-oil soup, 15 per bowl. Oasis's most beloved signature dish, a must-try. 每一只馄饨均为当天手工现包，薄韧面皮包裹鲜美猪肉馅，配以白汤或红油汤底，一碗 15 个，鲜香暖胃，来店必点。</p>
       <div class="price">$13.99</div>
     </div>
   </div>
 </section>
 
 <section id="menu">
-  <h2>菜单</h2>
-  <div class="section-sub">Menu</div>
+  <h2>Menu</h2>
+  <div class="section-sub">菜单</div>
   <div class="divider"></div>
   <div class="menu-grid">
 
     <div class="menu-card">
-      <span class="flag">招牌</span>
+      <span class="flag">Signature 招牌</span>
       <img class="dish-photo" src="images/dishes/手工鸡汤猪肉大馄饨.png" alt="手工鸡汤猪肉大馄饨">
-      <h4>手工鸡汤猪肉大馄饨（白汤/红油）15个</h4>
-      <div class="desc">强烈推荐 · 手工现包 · 15个/份</div>
+      <h4>Handmade Pork &amp; Chicken Wontons in Soup 手工鸡汤猪肉大馄饨</h4>
+      <div class="desc">Strongly Recommended · Handmade Daily · 15 pcs 强烈推荐 · 手工现包 · 15个/份</div>
       <div class="meta">
         <span class="price">$13.99</span>
         <span class="stars">★★★★★</span>
@@ -280,8 +300,8 @@
 
     <div class="menu-card">
       <img class="dish-photo" src="images/dishes/手工干挑大馄饨.png" alt="手工干挑猪肉大馄饨">
-      <h4>手工干挑猪肉大馄饨（酸辣）15个</h4>
-      <div class="desc">强烈推荐 · 酸辣口味 · 15个/份</div>
+      <h4>Handmade Pork Wontons w/ Chili Oil 手工干挑猪肉大馄饨</h4>
+      <div class="desc">Strongly Recommended · Hot &amp; Sour · 15 pcs 强烈推荐 · 酸辣口味 · 15个/份</div>
       <div class="meta">
         <span class="price">$13.99</span>
         <span class="stars">★★★★★</span>
@@ -290,8 +310,8 @@
 
     <div class="menu-card">
       <img class="dish-photo" src="images/dishes/馄饨面.png" alt="馄饨面">
-      <h4>馄饨面</h4>
-      <div class="desc">7个馄饨 + 捞面</div>
+      <h4>Wonton Noodle Soup 馄饨面</h4>
+      <div class="desc">7 wontons + noodles 7个馄饨 + 捞面</div>
       <div class="meta">
         <span class="price">$13.99</span>
         <span class="stars">★★★★☆</span>
@@ -300,8 +320,8 @@
 
     <div class="menu-card">
       <img class="dish-photo" src="images/dishes/红烧牛腩面.png" alt="秘制红烧牛腩面">
-      <h4>秘制红烧牛腩面</h4>
-      <div class="desc">强烈推荐 · 秘制红烧牛腩</div>
+      <h4>Braised Beef Brisket Noodle 秘制红烧牛腩面</h4>
+      <div class="desc">Strongly Recommended · Secret recipe braised brisket 强烈推荐 · 秘制红烧牛腩</div>
       <div class="meta">
         <span class="price">$13.99</span>
         <span class="stars">★★★★★</span>
@@ -310,8 +330,8 @@
 
     <div class="menu-card">
       <img class="dish-photo" src="images/dishes/卤肉饭.png" alt="卤肉饭">
-      <h4>卤肉饭（含卤蛋）</h4>
-      <div class="desc">强烈推荐 · 含卤蛋</div>
+      <h4>Braised Pork Rice 卤肉饭（含卤蛋）</h4>
+      <div class="desc">Strongly Recommended · Includes marinated egg 强烈推荐 · 含卤蛋</div>
       <div class="meta">
         <span class="price">$13.99</span>
         <span class="stars">★★★★★</span>
@@ -320,8 +340,8 @@
 
     <div class="menu-card">
       <img class="dish-photo" src="images/dishes/红烧排骨饭.png" alt="红烧排骨饭">
-      <h4>红烧排骨饭（含卤蛋）</h4>
-      <div class="desc">强烈推荐 · 含卤蛋</div>
+      <h4>Braised Pork Ribs Rice 红烧排骨饭（含卤蛋）</h4>
+      <div class="desc">Strongly Recommended · Includes marinated egg 强烈推荐 · 含卤蛋</div>
       <div class="meta">
         <span class="price">$13.99</span>
         <span class="stars">★★★★★</span>
@@ -330,8 +350,8 @@
 
     <div class="menu-card">
       <img class="dish-photo" src="images/dishes/咖喱鸡饭.png" alt="咖喱鸡饭">
-      <h4>咖喱鸡饭（含卤蛋）</h4>
-      <div class="desc">强烈推荐 · 含卤蛋</div>
+      <h4>Curry Chicken Rice 咖喱鸡饭（含卤蛋）</h4>
+      <div class="desc">Strongly Recommended · Includes marinated egg 强烈推荐 · 含卤蛋</div>
       <div class="meta">
         <span class="price">$13.99</span>
         <span class="stars">★★★★★</span>
@@ -340,8 +360,8 @@
 
     <div class="menu-card">
       <img class="dish-photo" src="images/dishes/飘香拌面.png" alt="飘香拌面">
-      <h4>飘香拌面（含煎蛋）</h4>
-      <div class="desc">含煎蛋 · 可选辣/不辣</div>
+      <h4>Savory Mixed Noodles 飘香拌面（含煎蛋）</h4>
+      <div class="desc">Includes fried egg · Mild or spicy 含煎蛋 · 可选辣/不辣</div>
       <div class="meta">
         <span class="price">$13.99</span>
         <span class="stars">★★★★☆</span>
@@ -350,8 +370,8 @@
 
     <div class="menu-card">
       <img class="dish-photo" src="images/dishes/酸辣粉.png" alt="酸辣粉">
-      <h4>酸辣粉（含卤蛋）</h4>
-      <div class="desc">荐 · 酸辣开胃 · 含卤蛋</div>
+      <h4>Hot &amp; Sour Rice Noodles 酸辣粉（含卤蛋）</h4>
+      <div class="desc">Recommended · Hot &amp; sour &amp; appetizing · Includes marinated egg 荐 · 酸辣开胃 · 含卤蛋</div>
       <div class="meta">
         <span class="price">$13.99</span>
         <span class="stars">★★★★☆</span>
@@ -360,8 +380,8 @@
 
     <div class="menu-card">
       <img class="dish-photo" src="images/dishes/麻辣什锦丸子.png" alt="麻辣什锦丸子">
-      <h4>麻辣什锦丸子</h4>
-      <div class="desc">荐 · 8个/份</div>
+      <h4>Spicy Assorted Meatballs 麻辣什锦丸子</h4>
+      <div class="desc">Recommended · 8 pcs 荐 · 8个/份</div>
       <div class="meta">
         <span class="price">$13.99</span>
         <span class="stars">★★★★☆</span>
@@ -370,8 +390,8 @@
 
     <div class="menu-card">
       <img class="dish-photo" src="images/dishes/老卤鸡翅.png" alt="老卤鸡翅">
-      <h4>老卤鸡翅</h4>
-      <div class="desc">荐 · 4个/份</div>
+      <h4>Braised Chicken Wings 老卤鸡翅</h4>
+      <div class="desc">Recommended · 4 pcs 荐 · 4个/份</div>
       <div class="meta">
         <span class="price">$7.99</span>
         <span class="stars">★★★★☆</span>
@@ -380,8 +400,8 @@
 
     <div class="menu-card">
       <img class="dish-photo" src="images/dishes/老卤鸡腿.png" alt="老卤鸡腿">
-      <h4>老卤鸡腿</h4>
-      <div class="desc">荐 · 2个/份</div>
+      <h4>Braised Chicken Legs 老卤鸡腿</h4>
+      <div class="desc">Recommended · 2 pcs 荐 · 2个/份</div>
       <div class="meta">
         <span class="price">$7.99</span>
         <span class="stars">★★★★☆</span>
@@ -390,14 +410,14 @@
 
   </div>
 
-  <h3 style="text-align:center; color:var(--dark); margin:48px 0 4px;">附加 Add-Ons</h3>
+  <h3 style="text-align:center; color:var(--dark); margin:48px 0 4px;">Add-Ons 附加项</h3>
   <div class="divider"></div>
   <div class="menu-grid">
 
     <div class="menu-card">
       <img class="dish-photo" src="images/dishes/荷包蛋.png" alt="荷包蛋">
-      <h4>荷包蛋 Fried Egg</h4>
-      <div class="desc">Add-On · 加料</div>
+      <h4>Fried Egg 荷包蛋</h4>
+      <div class="desc">Add-On · Extra 附加 · 加料</div>
       <div class="meta">
         <span class="price">$1.39/个</span>
         <span class="stars">★★★☆☆</span>
@@ -406,8 +426,8 @@
 
     <div class="menu-card">
       <img class="dish-photo" src="images/dishes/卤蛋.png" alt="卤蛋">
-      <h4>卤蛋 Marinated Egg</h4>
-      <div class="desc">Add-On · 加料</div>
+      <h4>Marinated Egg 卤蛋</h4>
+      <div class="desc">Add-On · Extra 附加 · 加料</div>
       <div class="meta">
         <span class="price">$1.39/个</span>
         <span class="stars">★★★☆☆</span>
@@ -416,8 +436,8 @@
 
     <div class="menu-card">
       <img class="dish-photo" src="images/dishes/各式软饮.png" alt="各式软饮">
-      <h4>各式软饮 Soft Drinks</h4>
-      <div class="desc">瓶装软饮</div>
+      <h4>Soft Drinks 各式软饮</h4>
+      <div class="desc">Bottled soft drinks 瓶装软饮</div>
       <div class="meta">
         <span class="price">$1.39/瓶</span>
         <span class="stars">★★★☆☆</span>
@@ -426,10 +446,10 @@
 
     <div class="menu-card">
       <img class="dish-photo" src="images/dishes/火腿鸡汤底.png" alt="火腿鸡汤底">
-      <h4>火腿鸡汤底 Ham &amp; Chicken Broth Base</h4>
-      <div class="desc">Add-On · 价格请咨询店员</div>
+      <h4>Ham &amp; Chicken Broth Base 火腿鸡汤底</h4>
+      <div class="desc">Add-On · Please ask staff for price 附加 · 价格请咨询店员</div>
       <div class="meta">
-        <span class="price">咨询店员</span>
+        <span class="price">Ask Staff 咨询店员</span>
         <span class="stars">★★★☆☆</span>
       </div>
     </div>
@@ -438,27 +458,27 @@
 </section>
 
 <section id="info">
-  <h2>地址与营业时间</h2>
-  <div class="section-sub">Location & Hours</div>
+  <h2>Location &amp; Hours</h2>
+  <div class="section-sub">地址与营业时间</div>
   <div class="divider"></div>
   <div class="info-cards">
     <div class="info-card">
       <div class="icon">📍</div>
-      <h4>地址 Address</h4>
-      <p>2652 E 10th St<br>Bloomington, IN 47408<br>USA</p>
+      <h4>Address 地址</h4>
+      <p>2652 E 10th St, Bloomington, IN 47408, USA<br>美国印第安纳州布卢明顿市东 10 街 2652 号</p>
     </div>
     <div class="info-card">
       <div class="icon">🕐</div>
-      <h4>营业时间 Hours</h4>
+      <h4>Hours 营业时间</h4>
       <ul class="hours">
-        <li>周一、周二、周四、周五、周六、周日 <span>11:00 AM – 1:00 AM 次日</span></li>
-        <li class="closed">周三 休息 Closed</li>
+        <li>Mon, Tue, Thu, Fri, Sat, Sun 周一、周二、周四、周五、周六、周日 <span>11:00 AM – 1:00 AM (next day) 次日凌晨 1:00</span></li>
+        <li class="closed">Closed on Wednesday 每周三休息</li>
       </ul>
     </div>
     <div class="info-card">
       <div class="icon">☎️</div>
-      <h4>联系电话 Phone</h4>
-      <p><a href="tel:8123393999" style="color:var(--primary);text-decoration:none;font-weight:600;">(812) 339-3999</a><br>支持到店自取</p>
+      <h4>Phone 联系电话</h4>
+      <p><a href="tel:8123393999" style="color:var(--primary);text-decoration:none;font-weight:600;">(812) 339-3999</a><br>Pickup available 支持到店自取</p>
     </div>
   </div>
 </section>
@@ -466,7 +486,7 @@
 <footer>
   <div class="brand">OASIS</div>
   <div class="slogan">The Best Chinese Fast Food</div>
-  <div style="margin-top:10px;">2652 E 10th St, Bloomington, IN 47408, USA</div>
+  <div style="margin-top:10px;">2652 E 10th St, Bloomington, IN 47408, USA<br><span style="opacity:.7;">美国印第安纳州布卢明顿市东 10 街 2652 号</span></div>
 </footer>
 
 <script>
